@@ -46,6 +46,7 @@ import NewWindow from '../components/NewWindow.vue'
 import Animals from './Animals.vue'
 import Inventory from './Inventory.vue'
 import Nasa from './Nasa.vue'
+import Rijks from './Rijks.vue'
 
 export default {
   name: 'IndexPage',
@@ -60,7 +61,8 @@ export default {
     NewWindow,
     Animals,
     Inventory,
-    Nasa
+    Nasa,
+    Rijks
   },
   data () {
     return {
@@ -77,8 +79,9 @@ export default {
           loadPage: false,
         },
         {
-          title: 'Bogam',
-          fontFamily: 'Bogam',
+          title: 'Rijks',
+          component: 'Rijks',
+          fontFamily: 'Canobis-Regular',
           row: '5',
           col: '2',
           color: 'gold',
@@ -103,9 +106,8 @@ export default {
           col: '4',
           color: 'blue',
           loadPage: false,
-
-
         },
+
       ]
       }
 

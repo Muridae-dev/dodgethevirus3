@@ -1,7 +1,7 @@
 <template>
-  <CFlex wrap="wrap" h="100vh" w="100%" zIndex="2" position="relative" overflow="hidden">
-
-    <img v-for="image, index in images" :style="{position: 'absolute', left: `${Math.floor(Math.random() * 100)}%`, top: '0', transform: 'translateY(-100%)', height: '200px', opacity: '0'}" :ref="`rijks${index}`" :src="image.src"
+  <CFlex wrap="wrap" h="100vh" w="100%" zIndex="2" position="relative" overflow="hidden" bg="black">
+    <GifBackground profile="rijks" />
+    <img v-for="image, index in images" :style="{position: 'absolute', left: `${Math.floor(Math.random() * 100)}%`, top: '0', transform: 'translateY(-100%)', height: '200px', opacity: '1'}" :ref="`rijks${index}`" :src="image.src"
     @click="showcase(index)" />
   </CFlex>
   </template>
@@ -13,6 +13,7 @@
     CImage,
     CFlex
   } from '@chakra-ui/vue'
+  import GifBackground from '../components/GifBackground.vue'
 
   export default {
     name: 'NewWindow',
@@ -20,7 +21,8 @@
       CBox,
       CText,
       CImage,
-      CFlex
+      CFlex,
+      GifBackground
     },
     props: [""],
     data() {

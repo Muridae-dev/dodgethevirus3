@@ -49,6 +49,9 @@
     <!-- INITIAL PLANETS END -->
 
     <MarsPhotos v-if="marsData && showPhotos" :marsData="marsData" />
+    <CBox :opacity="(!marsData && showPhotos || !peopleInSpace[0] && showPeople) ? '0.8' : '0'" transition="opacity 0.2s" pointerEvents="none" fontSize="8rem" fontFamily="Baunk" position="absolute" top="50%" left="50%" transform="translate(-50%,-50%)" color="red">
+      LOADING
+    </CBox>
 
   </CBox>
 </template>
