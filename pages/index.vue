@@ -12,23 +12,64 @@
       overflow="hidden"
       position="relative"
     >
-    <!-- <Intro /> -->
-    <GifBackground profile="main" />
-    <CGrid templateColumns="repeat(10, 10%)" templateRows="repeat(10, 1fr)"
-    position="absolute" top="0" left="0" h="100vh" w="100vw" zIndex="1" :opacity="showTitle ? '1' : '0'">
-      <CGridItem rowStart="6">
-        <CText fontFamily="Baunk" fontSize="6rem" lineHeight="4rem" transition="opacity 0.1s">DODGETHEVIRUS3</CText>
-      </CGridItem>
-      <CGridItem v-for="website in websites" :rowStart="website.row" :colStart="website.col" :colSpan="website.colSpan && website.colSpan">
-        <CBox @click="website.loadPage = true" :fontFamily="website.fontFamily" :transform="website.sideText && (website.row <= 5 ? 'rotate(-90deg) translateX(30%)' : 'rotate(90deg) translateX(30%)')" fontSize="6rem" lineHeight="4rem" transition="opacity 0.1s" :opacity="showTitle ? '1' : '0'">{{ website.title }}</CBox>
-      </CGridItem>
-    </CGrid>
+      <!-- <Intro /> -->
+      <GifBackground profile="main" />
+      <CGrid
+        templateColumns="repeat(10, 10%)"
+        templateRows="repeat(10, 1fr)"
+        position="absolute"
+        top="0"
+        left="0"
+        h="100vh"
+        w="100vw"
+        zIndex="1"
+        :opacity="showTitle ? '1' : '0'"
+      >
+        <CGridItem rowStart="6">
+          <CText
+            fontFamily="Baunk"
+            fontSize="6rem"
+            lineHeight="4rem"
+            transition="opacity 0.1s"
+            >DODGETHEVIRUS3</CText
+          >
+        </CGridItem>
+        <CGridItem
+          v-for="website in websites"
+          :rowStart="website.row"
+          :colStart="website.col"
+          :colSpan="website.colSpan && website.colSpan"
+        >
+          <CBox
+            @click="website.loadPage = true"
+            :fontFamily="website.fontFamily"
+            :transform="
+              website.sideText &&
+              (website.row <= 5
+                ? 'rotate(-90deg) translateX(30%)'
+                : 'rotate(90deg) translateX(30%)')
+            "
+            fontSize="6rem"
+            lineHeight="4rem"
+            transition="opacity 0.1s"
+            :opacity="showTitle ? '1' : '0'"
+            >{{ website.title }}</CBox
+          >
+        </CGridItem>
+      </CGrid>
 
-      <NewWindow v-for="website in websites" :website="website" v-if="website.loadPage">
-        <component :is="website.component && website.component" :updateInventory="updateInventory" :inventory="inventory"></component>
-      </NewWindow>>
-
-  </CBox>
+      <NewWindow
+        v-for="website in websites"
+        :website="website"
+        v-if="website.loadPage"
+      >
+        <component
+          :is="website.component && website.component"
+          :updateInventory="updateInventory"
+          :inventory="inventory"
+        ></component> </NewWindow
+      >>
+    </CBox>
   </div>
 </template>
 

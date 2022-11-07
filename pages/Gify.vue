@@ -1,7 +1,17 @@
 <template>
-  <CFlex h="100%" w="100%" zIndex="0" position="absolute" bg="black" justify="" flexWrap="wrap">
-    <img :style="{width:'100px', height:'100px'}" :src="gifData && gifData" />
-
+  <CFlex
+    h="100%"
+    w="100%"
+    zIndex="0"
+    position="absolute"
+    bg="black"
+    justify=""
+    flexWrap="wrap"
+  >
+    <img
+      :style="{ width: '100px', height: '100px' }"
+      :src="gifData && gifData"
+    />
   </CFlex>
 </template>
 

@@ -1,35 +1,107 @@
 <template>
-  <CBox h="100%" w="100%" zIndex="0" position="absolute" bg="black" justify="" flexWrap="wrap" overflow="hidden">
+  <CBox
+    h="100%"
+    w="100%"
+    zIndex="0"
+    position="absolute"
+    bg="black"
+    justify=""
+    flexWrap="wrap"
+    overflow="hidden"
+  >
     <GifBackground profile="nasa" />
 
     <!-- FIRST 2 RINGS -->
-    <CBox :style="{'mix-blend-mode' : 'overlay'}" class="put-center" h="200px" w="200px" border="2px dashed rgb(256,256,256, 1)" borderRadius="50%" animation="spinText 70s linear 0s infinite">
+    <CBox
+      :style="{ 'mix-blend-mode': 'overlay' }"
+      class="put-center"
+      h="200px"
+      w="200px"
+      border="2px dashed rgb(256,256,256, 1)"
+      borderRadius="50%"
+      animation="spinText 70s linear 0s infinite"
+    >
     </CBox>
 
-    <CBox :style="{'mix-blend-mode' : 'overlay'}" class="put-center" h="400px" w="400px" bg="transparent" border="2px dashed rgb(256,256,256, 1)" borderRadius="50%" animation="spinText 50s linear 0s infinite">
+    <CBox
+      :style="{ 'mix-blend-mode': 'overlay' }"
+      class="put-center"
+      h="400px"
+      w="400px"
+      bg="transparent"
+      border="2px dashed rgb(256,256,256, 1)"
+      borderRadius="50%"
+      animation="spinText 50s linear 0s infinite"
+    >
     </CBox>
     <!-- FIRST 2 RINGS END -->
 
     <!-- PEOPLE IN SPACE -->
-    <CBox :style="[{transition: 'opacity 1s'}, showPeople ? {opacity: '0.5'} : {opacity: '0'}]">
+    <CBox
+      :style="[
+        { transition: 'opacity 1s' },
+        showPeople ? { opacity: '0.5' } : { opacity: '0' },
+      ]"
+    >
       <CBox>
-        <CBox :style="{'mix-blend-mode' : 'overlay'}" class="put-center" h="600px" w="600px" bg="transparent" border="2px dashed red" borderRadius="50%" animation="spinText 50s linear 0s infinite">
+        <CBox
+          :style="{ 'mix-blend-mode': 'overlay' }"
+          class="put-center"
+          h="600px"
+          w="600px"
+          bg="transparent"
+          border="2px dashed red"
+          borderRadius="50%"
+          animation="spinText 50s linear 0s infinite"
+        >
         </CBox>
-        <CBox v-for="person, index in peopleInSpace" display="inline-block" :pointerEvents="showPeople ? 'auto' : 'none'">
-          <NasaPlanet :sentFunc="() => null" :text="person.name" hVar="320px" :timeForward="40 * index" color="yellow" :hoverData="person" :hoverFunc="hoverFunc" />
+        <CBox
+          v-for="(person, index) in peopleInSpace"
+          display="inline-block"
+          :pointerEvents="showPeople ? 'auto' : 'none'"
+        >
+          <NasaPlanet
+            :sentFunc="() => null"
+            :text="person.name"
+            hVar="320px"
+            :timeForward="40 * index"
+            color="yellow"
+            :hoverData="person"
+            :hoverFunc="hoverFunc"
+          />
         </CBox>
       </CBox>
     </CBox>
     <!-- PEOPLE IN SPACE END -->
 
     <!-- PEOPLE IN SPACE SHOW INFO -->
-    <CFlex class="put-center" :opacity="hoverPerson ? '1' : '0'" flexDirection="column" justify="center" pointerEvents="none" transition="opacity 0.2s" w="100%" h="100%" bg="rgb(0, 0, 0, 0.3)">
-      <CBox v-if="hoverData" v-for="info in Object.entries(hoverData)" textAlign="center" p="20px">
+    <CFlex
+      class="put-center"
+      :opacity="hoverPerson ? '1' : '0'"
+      flexDirection="column"
+      justify="center"
+      pointerEvents="none"
+      transition="opacity 0.2s"
+      w="100%"
+      h="100%"
+      bg="rgb(0, 0, 0, 0.3)"
+    >
+      <CBox
+        v-if="hoverData"
+        v-for="info in Object.entries(hoverData)"
+        textAlign="center"
+        p="20px"
+      >
         <CText fontFamily="Baunk" color="gold" fontSize="1rem">
           {{ info[0] }}
         </CText>
 
-        <CText fontFamily="Baunk" color="yellow" fontSize="4rem" lineHeight="3rem">
+        <CText
+          fontFamily="Baunk"
+          color="yellow"
+          fontSize="4rem"
+          lineHeight="3rem"
+        >
           {{ info[1] }}
         </CText>
       </CBox>
@@ -38,21 +110,67 @@
 
     <!-- INITIAL PLANETS -->
 
-    <NasaPlanet text="mars" hVar="220px" :timeForward="225" :sentFunc="() => showPhotos = !showPhotos"  />
-    <NasaPlanet text="mars" hVar="120px" :timeForward="30" :sentFunc="() => showPhotos = !showPhotos"  />
-    <NasaPlanet text="mars" hVar="120px" :timeForward="205" :sentFunc="() => showPhotos = !showPhotos"  />
-    <NasaPlanet text="mars" hVar="220px" :timeForward="105" :sentFunc="() => showPhotos = !showPhotos"  />
+    <NasaPlanet
+      text="mars"
+      hVar="220px"
+      :timeForward="225"
+      :sentFunc="() => (showPhotos = !showPhotos)"
+    />
+    <NasaPlanet
+      text="mars"
+      hVar="120px"
+      :timeForward="30"
+      :sentFunc="() => (showPhotos = !showPhotos)"
+    />
+    <NasaPlanet
+      text="mars"
+      hVar="120px"
+      :timeForward="205"
+      :sentFunc="() => (showPhotos = !showPhotos)"
+    />
+    <NasaPlanet
+      text="mars"
+      hVar="220px"
+      :timeForward="105"
+      :sentFunc="() => (showPhotos = !showPhotos)"
+    />
 
-    <NasaPlanet text="people" color="yellow" hVar="120px" :timeForward="370" :sentFunc="() => showPeople = !showPeople" />
+    <NasaPlanet
+      text="people"
+      color="yellow"
+      hVar="120px"
+      :timeForward="370"
+      :sentFunc="() => (showPeople = !showPeople)"
+    />
 
-    <NasaPlanet text="mars" color="yellow" hVar="220px" :timeForward="225" :sentFunc="() => showPhotos = !showPhotos"  />
+    <NasaPlanet
+      text="mars"
+      color="yellow"
+      hVar="220px"
+      :timeForward="225"
+      :sentFunc="() => (showPhotos = !showPhotos)"
+    />
     <!-- INITIAL PLANETS END -->
 
     <MarsPhotos v-if="marsData && showPhotos" :marsData="marsData" />
-    <CBox :opacity="(!marsData && showPhotos || !peopleInSpace[0] && showPeople) ? '0.8' : '0'" transition="opacity 0.2s" pointerEvents="none" fontSize="8rem" fontFamily="Baunk" position="absolute" top="50%" left="50%" transform="translate(-50%,-50%)" color="red">
+    <CBox
+      :opacity="
+        (!marsData && showPhotos) || (!peopleInSpace[0] && showPeople)
+          ? '0.8'
+          : '0'
+      "
+      transition="opacity 0.2s"
+      pointerEvents="none"
+      fontSize="8rem"
+      fontFamily="Baunk"
+      position="absolute"
+      top="50%"
+      left="50%"
+      transform="translate(-50%,-50%)"
+      color="red"
+    >
       LOADING
     </CBox>
-
   </CBox>
 </template>
 

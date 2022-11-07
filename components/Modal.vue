@@ -1,11 +1,32 @@
 <template>
-  <CBox z-i h="100%" w="100%" bg="rgb(0,0,0,0.8)" zIndex="2" position="absolute" top="50%" left="50%" textAlign="center" transform="translate(-50%,-50%)">
-    <CBox @click="hideModal" position="absolute" top="10px" right="20px" fontFamily="GOVER" fontSize="2.5rem">X</CBox>
-    <AnimalData :animalInfo="animalInfo" :updateInventory="updateInventory" v-if="profile === 'animals'" />
+  <CBox
+    z-i
+    h="100%"
+    w="100%"
+    bg="rgb(0,0,0,0.8)"
+    zIndex="2"
+    position="absolute"
+    top="50%"
+    left="50%"
+    textAlign="center"
+    transform="translate(-50%,-50%)"
+  >
+    <CBox
+      @click="hideModal"
+      position="absolute"
+      top="10px"
+      right="20px"
+      fontFamily="GOVER"
+      fontSize="2.5rem"
+      >X</CBox
+    >
+    <AnimalData
+      :animalInfo="animalInfo"
+      :updateInventory="updateInventory"
+      v-if="profile === 'animals'"
+    />
 
-    <CBox v-if="profile === 'nasa'">
-
-    </CBox>
+    <CBox v-if="profile === 'nasa'"> </CBox>
   </CBox>
 </template>
 

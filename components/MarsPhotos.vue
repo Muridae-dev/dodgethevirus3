@@ -1,9 +1,34 @@
 <template>
-    <CBox position="absolute" top="0" left="0" w="100%" h="100%" pointerEvents="none">
-      <CBox v-for="photo, index in marsData" :style="{'mix-blend-mode' : 'difference', position: 'absolute', top: `${imgPos[index].top}`, left: `${imgPos[index].left}`}">
-        <img :src="photo.img_src" :ref="index" @load="loadImage(index)" :style="{ 'max-width': '200px', 'max-height': '200px', opacity: '0' , transition: 'opacity 1s'}" />
-      </CBox>
+  <CBox
+    position="absolute"
+    top="0"
+    left="0"
+    w="100%"
+    h="100%"
+    pointerEvents="none"
+  >
+    <CBox
+      v-for="(photo, index) in marsData"
+      :style="{
+        'mix-blend-mode': 'difference',
+        position: 'absolute',
+        top: `${imgPos[index].top}`,
+        left: `${imgPos[index].left}`,
+      }"
+    >
+      <img
+        :src="photo.img_src"
+        :ref="index"
+        @load="loadImage(index)"
+        :style="{
+          'max-width': '200px',
+          'max-height': '200px',
+          opacity: '0',
+          transition: 'opacity 1s',
+        }"
+      />
     </CBox>
+  </CBox>
 </template>
 
 <script lang="js">

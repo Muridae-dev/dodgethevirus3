@@ -1,13 +1,37 @@
 <template>
-  <CFlex w="100%" h="100%" overflow="hidden" position="relative" bg="black" justify="center">
+  <CFlex
+    w="100%"
+    h="100%"
+    overflow="hidden"
+    position="relative"
+    bg="black"
+    justify="center"
+  >
     <CBox position="relative" zIndex="1">
-      <CBox v-for="letter, index in splitLetters(textCircle)" h="500px" w="6rem" position="absolute" transformOrigin="bottom" :transform="`rotate(${((index-(splitLetters(textCircle).length/2)) * 10) + 5}deg)`" display="inline-block" >
-        <CText h="1rem" w="6rem" fontFamily="PleaturesDemo-Regular" fontSize="8rem" textAlign="center" margin="auto">
+      <CBox
+        v-for="(letter, index) in splitLetters(textCircle)"
+        h="500px"
+        w="6rem"
+        position="absolute"
+        transformOrigin="bottom"
+        :transform="`rotate(${
+          (index - splitLetters(textCircle).length / 2) * 10 + 5
+        }deg)`"
+        display="inline-block"
+      >
+        <CText
+          h="1rem"
+          w="6rem"
+          fontFamily="PleaturesDemo-Regular"
+          fontSize="8rem"
+          textAlign="center"
+          margin="auto"
+        >
           {{ letter }}
         </CText>
       </CBox>
     </CBox>
-    <GrainImage/>
+    <GrainImage />
   </CFlex>
 </template>
 

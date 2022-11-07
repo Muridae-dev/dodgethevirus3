@@ -12,9 +12,15 @@
       overflow="hidden"
       position="relative"
     >
-    <CBox fontSize="5rem"  v-for="n in 20" lineHeight="4rem">
-      <CText fontFamily="Baunk" transition="opacity 0.1s" :transitionDelay="`${n/15}s`" :opacity="showIntro ? '1' : '0' ">DODGETHEVIRUS3</CText>
-    </CBox>
+      <CBox fontSize="5rem" v-for="n in 20" lineHeight="4rem">
+        <CText
+          fontFamily="Baunk"
+          transition="opacity 0.1s"
+          :transitionDelay="`${n / 15}s`"
+          :opacity="showIntro ? '1' : '0'"
+          >DODGETHEVIRUS3</CText
+        >
+      </CBox>
     </CBox>
   </div>
 </template>

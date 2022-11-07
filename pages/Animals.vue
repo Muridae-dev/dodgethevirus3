@@ -1,18 +1,48 @@
 <template>
-  <CFlex w="100%" h="100%" overflow="hidden" position="relative" bg="black" justify="center">
-    <Modal :animalInfo="animalInfo" :hideModal="() => showModal = false" v-if="showModal" :updateInventory="updateInventory" profile="animals" />
+  <CFlex
+    w="100%"
+    h="100%"
+    overflow="hidden"
+    position="relative"
+    bg="black"
+    justify="center"
+  >
+    <Modal
+      :animalInfo="animalInfo"
+      :hideModal="() => (showModal = false)"
+      v-if="showModal"
+      :updateInventory="updateInventory"
+      profile="animals"
+    />
     <CBox position="relative" zIndex="1">
-      <CText fontFamily="PleaturesDemo-Regular" fontSize="4rem" w="300px" position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)">
+      <CText
+        fontFamily="PleaturesDemo-Regular"
+        fontSize="4rem"
+        w="300px"
+        position="absolute"
+        top="50%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+      >
         ANIMALS
       </CText>
-      <CBox v-for="image, index in images" h="300px" w="80px" position="absolute" top="calc(50% - 300px)" left="calc(50% - 40px)"  :transform="`rotate(${index * 30}deg)`" transformOrigin="bottom" display="inline-block" >
-        <CBox @click="fetchAnimal(getAnimalName(image.src));">
-          <CImage :src="image.src" filter="invert(100)">
-          </CImage>
+      <CBox
+        v-for="(image, index) in images"
+        h="300px"
+        w="80px"
+        position="absolute"
+        top="calc(50% - 300px)"
+        left="calc(50% - 40px)"
+        :transform="`rotate(${index * 30}deg)`"
+        transformOrigin="bottom"
+        display="inline-block"
+      >
+        <CBox @click="fetchAnimal(getAnimalName(image.src))">
+          <CImage :src="image.src" filter="invert(100)"> </CImage>
         </CBox>
       </CBox>
     </CBox>
-    <GrainImage bgSrc="backgrounds/savannah.jpeg"/>
+    <GrainImage bgSrc="backgrounds/savannah.jpeg" />
   </CFlex>
 </template>
 

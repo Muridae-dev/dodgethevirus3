@@ -10,12 +10,37 @@
       position="relative"
     >
       <CBox position="absolute" top="50%" transform="translateY(-50%)">
-        <CText fontFamily="Baunk" fontSize="4rem" lineHeight="4rem" transition="opacity 0.1s">DODGETHEVIRUS3</CText>
+        <CText
+          fontFamily="Baunk"
+          fontSize="4rem"
+          lineHeight="4rem"
+          transition="opacity 0.1s"
+          >DODGETHEVIRUS3</CText
+        >
       </CBox>
-      <CBox v-for="website in websites" position="absolute" :top="website.yPos" :left="website.xPos" transform="translateY(-50%)">
-        <CBox @click="website.loadPage = true" :fontFamily="website.fontFamily" :transform="website.sideText && (website.row <= 5 ? 'rotate(-90deg) translateX(30%)' : 'rotate(90deg) translateX(30%)')" fontSize="4rem" transition="opacity 0.1s" :opacity="showTitle ? '1' : '0'">{{ website.title }}</CBox>
+      <CBox
+        v-for="website in websites"
+        position="absolute"
+        :top="website.yPos"
+        :left="website.xPos"
+        transform="translateY(-50%)"
+      >
+        <CBox
+          @click="website.loadPage = true"
+          :fontFamily="website.fontFamily"
+          :transform="
+            website.sideText &&
+            (website.row <= 5
+              ? 'rotate(-90deg) translateX(30%)'
+              : 'rotate(90deg) translateX(30%)')
+          "
+          fontSize="4rem"
+          transition="opacity 0.1s"
+          :opacity="showTitle ? '1' : '0'"
+          >{{ website.title }}</CBox
+        >
       </CBox>
-  </CBox>
+    </CBox>
   </div>
 </template>
 
