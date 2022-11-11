@@ -1,0 +1,86 @@
+/* ------------------- NASA ------------------- */
+@keyframes spinPlanet {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinText {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* ------------------- NASA END ------------------- */
+
+/* ------------------- RIJKS ? ------------------- */
+@keyframes moveImage {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(1000%);
+  }
+}
+/* ------------------- RIJKS END ------------------- */
+
+/* ------------------- ANIMATIONS ------------------- */
+@keyframes mouseClick {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+
+  to {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+  }
+}
+
+@keyframes mouseClick2 {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+    border: 3px solid red;
+  }
+
+  to {
+    width: 400%;
+    height: 400%;
+    opacity: 0;
+    border: 3px solid red;
+  }
+}
+
+@keyframes backgroundGradientAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes backgroundFilter {
+  0% {
+    filter: contrast(100%);
+  }
+  100% {
+    filter: contrast(200%);
+  }
+}
+/* ------------------- ANIMATIONS END ------------------- */

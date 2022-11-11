@@ -13,11 +13,19 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "./layouts/global.css"
+    './layouts/global.css',
+    './layouts/animations.css',
+    './layouts/fonts.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['./plugins/api.js', './plugins/solaireApi.js', './plugins/astrosApi.js', './plugins/rijksApi.js', './plugins/kontentApi.js'],
+  plugins: [
+    './plugins/api.js',
+    './plugins/solaireApi.js',
+    './plugins/astrosApi.js',
+    './plugins/rijksApi.js',
+    './plugins/kontentApi.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,7 +49,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // proxy: true
-    baseURL: 'https://api.api-ninjas.com/v1/'
+    baseURL: 'https://api.api-ninjas.com/v1/',
   },
 
   // proxy: {

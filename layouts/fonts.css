@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Baunk;
+  src: url('../static/assets/fonts/Baunk.ttf');
+}
+
+@font-face {
+  font-family: Bogam;
+  src: url('../static/assets/fonts/Bogam.ttf');
+}
+
+@font-face {
+  font-family: Canobis-Regular;
+  src: url('../static/assets/fonts/Canobis-Regular.otf');
+}
+
+@font-face {
+  font-family: CRENZO;
+  src: url('../static/assets/fonts/CRENZO.ttf');
+}
+
+@font-face {
+  font-family: GOVER;
+  src: url('../static/assets/fonts/GOVER.ttf');
+}
+
+@font-face {
+  font-family: PleaturesDemo-Outline;
+  src: url('../static/assets/fonts/PleaturesDemo-Outline.ttf');
+}
+
+@font-face {
+  font-family: PleaturesDemo-Regular;
+  src: url('../static/assets/fonts/PleaturesDemo-Regular.ttf');
+}
+
+@font-face {
+  font-family: Wriggle;
+  src: url('../static/assets/fonts/Wriggle-Regular.otf');
+}
+
+@font-face {
+  font-family: Fasthand;
+  src: url('../static/assets/fonts/Fasthand-Regular.ttf');
+}
+
+@font-face {
+  font-family: Lovecraft1;
+  src: url('../static/assets/fonts/lovecraft1.otf');
+}
+
+@font-face {
+  font-family: Lovecraft2;
+  src: url('../static/assets/fonts/lovecraft2.otf');
+}
