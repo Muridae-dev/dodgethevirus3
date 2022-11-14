@@ -41,8 +41,8 @@
   }
 
   to {
-    width: 300%;
-    height: 300%;
+    width: 600%;
+    height: 600%;
     opacity: 0;
   }
 }
@@ -56,8 +56,8 @@
   }
 
   to {
-    width: 400%;
-    height: 400%;
+    width: 800%;
+    height: 800%;
     opacity: 0;
     border: 3px solid red;
   }
@@ -81,6 +81,16 @@
   }
   100% {
     filter: contrast(200%);
+  }
+}
+
+@keyframes shakeText {
+  from {
+    transform:translate(-50%, -50%) rotate(1deg);
+  }
+
+  to {
+    transform:translate(-50%, -50%) rotate(-1deg);
   }
 }
 /* ------------------- ANIMATIONS END ------------------- */

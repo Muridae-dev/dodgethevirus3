@@ -73,6 +73,24 @@
       >
         <source src="../static/assets/videos/nebula.mp4" />
       </video>
+
+      <!-------------------------- PROFILE LOVECRAFT -------------------------->
+
+      <img
+        v-if="profile === 'lovecraft'"
+        :style="{ opacity: '0.6', width: '100%', filter: 'contrast(120%)' }"
+        :src="require('../static/assets/lovecraft/lovecraftbgBig.png')"
+      />
+      <video
+        v-if="profile === 'lovecraft'"
+        class="put-center"
+        :style="{ 'mix-blend-mode': 'difference', width: '100%', opacity: '0.5' }"
+        muted
+        autoplay
+        loop
+      >
+        <source src="../static/assets/videos/nebula.mp4" />
+      </video>
     </CBox>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <AnimatedCursor />
     <CBox
       d="flex"
       w="100vw"
@@ -11,7 +12,9 @@
       margin="auto"
       overflow="hidden"
       position="relative"
+      cursor="none"
     >
+
       <!-- <Intro /> -->
       <GifBackground profile="main" />
       <CGrid
@@ -68,7 +71,7 @@
           :updateInventory="updateInventory"
           :inventory="inventory"
         ></component> </NewWindow
-      >>
+      >
     </CBox>
   </div>
 </template>
@@ -88,6 +91,8 @@ import Animals from './Animals.vue'
 import Inventory from './Inventory.vue'
 import Nasa from './Nasa.vue'
 import Rijks from './Rijks.vue'
+import AnimatedCursor from '../components/AnimatedCursor.vue'
+import Lovecraft from './Lovecraft.vue'
 
 export default {
   name: 'IndexPage',
@@ -103,8 +108,10 @@ export default {
     Animals,
     Inventory,
     Nasa,
-    Rijks
-  },
+    Rijks,
+    AnimatedCursor,
+    Lovecraft
+},
   data () {
     return {
       showTitle: true,
@@ -145,6 +152,15 @@ export default {
           fontFamily: 'CRENZO',
           row: '5',
           col: '4',
+          color: 'blue',
+          loadPage: false,
+        },
+        {
+          title: 'Lovecraft',
+          component: 'Lovecraft',
+          fontFamily: 'Lovecraft1',
+          row: '7',
+          col: '5',
           color: 'blue',
           loadPage: false,
         },

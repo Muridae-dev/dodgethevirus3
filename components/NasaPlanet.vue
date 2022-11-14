@@ -3,7 +3,6 @@
     class="put-center"
     :style="{ 'mix-blend-mode': 'overlay' }"
     @click="sentFunc"
-    cursor="pointer"
   >
     <CBox
       :h="hVar"

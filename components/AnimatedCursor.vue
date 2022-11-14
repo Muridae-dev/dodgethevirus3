@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="{overflow: 'hidden'}">
     <CBox
       h="50px"
       w="50px"
@@ -9,6 +9,8 @@
       border="3px solid white"
       pointerEvents="none"
       mixBlendMode="difference"
+      id="cursorBox"
+      zIndex="99"
     >
     </CBox>
     <CBox
@@ -21,6 +23,8 @@
       transform="translate(-50%,-50%)"
       mixBlendMode="difference"
       ref="cursorDot"
+      zIndex="99"
+      pointerEvents="none"
     >
       <CBox
         w="0"
