@@ -14,7 +14,6 @@
       position="relative"
       cursor="none"
     >
-
       <!-- <Intro /> -->
       <GifBackground profile="main" />
       <CGrid
@@ -70,8 +69,8 @@
           :is="website.component && website.component"
           :updateInventory="updateInventory"
           :inventory="inventory"
-        ></component> </NewWindow
-      >
+        ></component>
+      </NewWindow>
     </CBox>
   </div>
 </template>
@@ -184,7 +183,7 @@ export default {
       console.log('inventory', JSON.parse(localStorage.getItem('inventory')))
     },
     formatInventory() {
-      JSON.parse(localStorage.getItem('inventory')).map(item => {
+      JSON.parse(localStorage.getItem('inventory'))?.map(item => {
         if(Array.isArray(item)) {
           item.map(ite => {
             this.inventory.push(ite)
